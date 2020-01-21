@@ -14,6 +14,7 @@ class Graph:
     def add_vertex(self, vertex_id):
         """
         Add a vertex to the graph.
+        intakes vertex id which is a number 
         """
         self.vertices[vertex_id] = set()  # TODO
 
@@ -131,7 +132,30 @@ class Graph:
         starting_vertex to destination_vertex in
         depth-first order.
         """
-        pass  # TODO
+        # create an empty stack and push the starting vertex ID
+        stack = Stack()
+        # put the starting point in that
+        stack.push(starting_vertex)
+        # create an empty set to store visited vertices
+        visited = set()
+
+        # #while the stack is not empty...
+        while stack.size() > 0:
+            # pop the first vertex
+            vertex = stack.pop()
+            if vertex == destination_vertex:
+                return
+            vertex = stack.pop()
+
+        # if that vertex has not been visisted
+            # if vertex not in visited:
+
+            #     # mark it as visited
+            #     print(vertex)
+            visited.add(vertex)
+        # then add all its neighbors to the back of the stack
+            for neighbor in self.vertices[vertex]:
+                stack.push(neighbor)
 
     def dfs_recursive(self, starting_vertex):
         """
