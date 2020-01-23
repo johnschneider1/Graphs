@@ -101,7 +101,6 @@ class Graph:
         Print each vertex in depth-first order
         beginning from starting_vertex.
         This should be done using recursion.
-
         """
         if visited is None:
             visited = set()
@@ -176,7 +175,6 @@ class Graph:
 
            time = 0([v] + [e])
            space = 0(n)
-           pass by reference vs pass by value bugs keep an eye out
 
 
 
@@ -203,9 +201,7 @@ class Graph:
                 for next_vert in self.get_neighbors(vertex):
                     # Copy path to avoid pass by reference bug
                     # Make a copy of path rather than reference
-                    # makes a copy rather than a reference
                     new_path = list(path)
-                    print("pathTest:", new_path)
                     new_path.append(next_vert)
                     stack.push(new_path)
 
